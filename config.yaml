@@ -1,0 +1,30 @@
+# Dataset
+dataset_root: "C:/Dansware_dev/redautocadena/data"
+cadena_dir: "C:/Dansware_dev/redautocadena/data/cadena"
+normal_dir: "C:/Dansware_dev/redautocadena/data/normal"
+
+# Embedding
+embedding_model: "mobilenetv3_small_100"  # más ligero que resnet50
+embedding_dim: 1024                        # penúltima capa de MobileNetV3 small
+image_size: 224                 # input size for model
+normalize_mean: [0.485, 0.456, 0.406]
+normalize_std:  [0.229, 0.224, 0.225]
+
+# Indexación
+top_k: 5
+similarity_threshold: 0.85
+min_matches: 3
+
+# Salida
+dist_dir: "C:/Dansware_dev/redautocadena/dist"
+artifacts:
+  embeddings_npy: "embeddings.npy"
+  labels_json: "labels.json"
+  faiss_index: "index.faiss"
+  manifest_json: "manifest.json"
+  report_md: "report.md"
+
+# Verificación rápida
+sanity_check:
+  sample_queries: 3000
+  use_source: "cadena"
